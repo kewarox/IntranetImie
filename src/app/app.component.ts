@@ -11,14 +11,46 @@ import { StatusBar } from '@ionic-native/status-bar/ngx';
 export class AppComponent {
   public appPages = [
     {
-      title: 'Home',
+      titre: 'Dashboard',
+      commentaire: 'Accéder à votre tableau de bord',
       url: '/home',
-      icon: 'home'
+      icone: '../assets/img/Imie_Ico.svg'
     },
     {
-      title: 'List',
-      url: '/list',
-      icon: 'list'
+      titre: 'planning',
+      commentaire: 'Accéder à votre planing et organisez-vous !',
+      url: '/planning',
+      icone: '../assets/img/Planning_Ico.svg'
+    },
+    {
+      titre: "Espace de stockage",
+      commentaire: 'Télécharger et partager vos cours et documents administratif !',
+      url: '/cloud',
+      icone: '../assets/img/Ordinateur.svg'
+    },
+    {
+      titre: "Profil",
+      commentaire: "Consultez les diffèrentes promotions et parcourez les trombinoscopes pour l'elaboration d'une équipe !",
+      url: '/profil',
+      icone: '../assets/img/Profil_Ico.svg'
+    },
+    {
+      titre: "Forum",
+      commentaire: "Consultez et contribuer au forum !",
+      url: '/forum',
+      icone: '../assets/img/Forum_Ico.svg'
+    },
+    {
+      titre: 'Espace BDE',
+      commentaire: "Tenez-vous informé et accédez aux communications du BDE",
+      url: '/bde',
+      icone: '../assets/img/Trombi_Ico.svg'
+    },
+    {
+      titre:'Décollage !',
+      commentaire: "se déconnecter !",
+      url:"connexion",
+      icone:'../assets/img/ico_fusee.PNG'
     }
   ];
 

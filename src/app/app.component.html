@@ -10,10 +10,13 @@
         <ion-list>
           <ion-menu-toggle auto-hide="false" *ngFor="let p of appPages">
             <ion-item [routerDirection]="'root'" [routerLink]="[p.url]">
-              <ion-icon slot="start" [name]="p.icon"></ion-icon>
-              <ion-label>
-                {{p.title}}
-              </ion-label>
+              <ion-avatar slot="start" class="hydrated"><img [src]="p.icone" /></ion-avatar>
+              <!--<ion-icon slot="start" [name]="p.icon"></ion-icon>-->
+<!--              <ion-label>
+                <h3>  {{ p.titre }} </h3>
+              </ion-label>             
+--> 
+              <h6 style="word-wrap: break-word;">{{p.commentaire}}</h6>
             </ion-item>
           </ion-menu-toggle>
         </ion-list>

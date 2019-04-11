@@ -1,0 +1,34 @@
+/*********************
+      HEADER
+*********************/
+.Header_Identite{
+    text-align: center;
+  }
+  
+  .Header_Nom, .Header_Prenom, .Header_Formation {
+    color: #3fbfef;
+  }
+  
+  .Header_Nom, .Header_Prenom, .Header_Formation{
+    display:inline;
+  }
+  
+  .Avatar, .Activity, .Message {
+    margin : 10px;
+  }
+  
+  .Message {
+    float:right;
+    text-align: center;
+  }
+  
+  .Activity {
+    float:right;
+    text-align: center;
+  }
+  
+  .Avatar{
+    height: 60px;
+    border-radius: 50px;
+    float: right;
+  }

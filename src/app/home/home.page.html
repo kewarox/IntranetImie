@@ -1,22 +1,4 @@
-<ion-header>
-  <ion-toolbar>
-    <ion-buttons slot="start">
-      <ion-menu-button></ion-menu-button>
-    </ion-buttons>
-    <ion-title>
-        <div class='Header_Identite'>
-          <p class='Header_Nom'> {{ Etudiant?.Nom }}  </p>
-          <p class='Header_Prenom'> {{ Etudiant?.Prenom }}   
-            <img class='Avatar' src="../../assets/img/personas/user-sean.png" />
-            <ion-icon name="pulse" class='Activity'></ion-icon>
-            <ion-icon name="mail-open" class='Message'></ion-icon> 
-          </p>
-          <p class='Header_Formation'> {{ Etudiant?.Formation }} </p>
-        </div>
-    </ion-title>
-  </ion-toolbar>
-</ion-header>
-
+<app-header></app-header>
 <ion-content>
     <ion-card>
         <ion-card-header>
