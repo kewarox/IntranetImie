@@ -3,15 +3,17 @@
 </ion-header>
 
 <ion-content>
-<app-recherche-profil></app-recherche-profil>
+    Message: {{message}}
+
+<app-recherche-profil (EventToParent)="RechercheProfilEffectue($event)"></app-recherche-profil>
 
 
 <ion-list>
     <ion-list-header><h3> Envie de construire la dream team ? </h3></ion-list-header>  
     <ion-item>
       <ion-label> Choisissez la promotion pour le recrutement : </ion-label>
-      <ion-select  [value]="inputSelect" (ionChange)="onSelectChange($event)" okText="ok, Envoie du rêve !" cancelText="non, j'ai déjà trouvé..">
-        <ion-select-option *ngFor="let Formation of ListeFormation"  [value]="inputSelect">{{ Formation }}</ion-select-option>
+      <ion-select  placeholder='Dev03' (ionChange)="onSelectChange($event)" okText="ok, Envoie du rêve !" cancelText="non, j'ai déjà trouvé..">
+        <ion-select-option *ngFor="let Formation of ListeFormation"  [value]="Formation">{{ Formation }}</ion-select-option>
       </ion-select>
     </ion-item>
   
