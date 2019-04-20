@@ -1,6 +1,8 @@
-import { Component, OnInit, Input } from '@angular/core';
-import { EtudiantService } from '../services/etudiant.service'
+import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
 import { Etudiant } from '../models/Etudiant';
+
+import { EtudiantService } from '../services/etudiant.service';
 
 @Component({
   selector: 'app-profil',
@@ -9,44 +11,21 @@ import { Etudiant } from '../models/Etudiant';
 })
 export class ProfilPage implements OnInit {
 
-  AllEtudiants : Etudiant[];
-  inputSelect : string;
-  ListeFormation = [];
+  Etudiant : Etudiant;
+  nom : string;
+  id : number;
+  private sub: any;
 
-  constructor(private DataEtudiant:EtudiantService) {
-    console.log("****START : Consultation de la page profil****");
-
-   }
-
-   RechercheProfilEffectue($event) {
-     console.log("************************************");
-     console.log("****COMPOSANT : profil.page.ts ****");
-     console.log("****METHODE : RechercheProfilEffectue($event)****");
-     console.log("Description : Changement de la liste des etudiants pour maj page");
-     console.log("----Resultat de recherche depuis le composant rechercheProfil----");
-     console.log($event);
-     console.log("changement de l'affichage en cours");
-     this.AllEtudiants = $event;
+  constructor(private route: ActivatedRoute, private DataEtudiant:EtudiantService) {
   }
 
   ngOnInit() {
-     this.AllEtudiants = this.DataEtudiant.getEtudiantsFormation("Dev03");
-     this.ListeFormation = this.DataEtudiant.getListeFormation();
-  }
-
-  AfficherProfil() {
-    console.log("Affichage du profil selectionné");
-    
-
-  }
-
-  onSelectChange($event){
-    this.inputSelect = $event.target.value;
-
-    if (this.inputSelect != undefined)
-    {
-      this.AllEtudiants = this.DataEtudiant.getEtudiantsFormation(this.inputSelect);      
-    }
+    this.sub = this.route.params.subscribe(params => {
+      this.id = params['id'];
+      this.Etudiant = this.DataEtudiant.RechercheId(this.id);
+      console.log("ici");
+      console.log(this.Etudiant);
+   });
 
   }
 

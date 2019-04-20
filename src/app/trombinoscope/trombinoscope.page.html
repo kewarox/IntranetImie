@@ -1,0 +1,36 @@
+<ion-header>
+    <app-header></app-header>
+</ion-header>
+
+<ion-content>
+    Message: {{message}}
+
+<app-recherche-profil (EventToParent)="RechercheProfilEffectue($event)"></app-recherche-profil>
+
+
+<ion-list>
+    <ion-list-header><h3> Envie de construire la dream team ? </h3></ion-list-header>  
+    <ion-item>
+      <ion-label> Choisissez la promotion pour le recrutement : </ion-label>
+      <ion-select  placeholder='Dev03' (ionChange)="onSelectChange($event)" okText="ok, Envoie du rêve !" cancelText="non, j'ai déjà trouvé..">
+        <ion-select-option *ngFor="let Formation of ListeFormation"  [value]="Formation">{{ Formation }}</ion-select-option>
+      </ion-select>
+    </ion-item>
+  
+  </ion-list>
+
+<ion-card *ngFor="let Etudiant of AllEtudiants" (click)="AfficherProfil(Etudiant.Nom, Etudiant.Prenom, Etudiant.Formation)">
+    <ion-card-header [routerLink]="['/profil' , Etudiant.id]">
+            <img class='Avatar' src="{{ Etudiant.Img }}" />
+            <ion-card-subtitle>{{ Etudiant.Nom }} {{ Etudiant.Prenom }}</ion-card-subtitle>
+            <ion-card-title>Card Title</ion-card-title>
+    </ion-card-header>
+  
+    <ion-card-content>
+      Keep close to Nature's heart... and break clear away, once in awhile,
+      and climb a mountain or spend a week in the woods. Wash your spirit clean.
+    </ion-card-content>
+  </ion-card>
+  
+  
+</ion-content>

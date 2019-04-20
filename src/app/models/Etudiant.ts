@@ -3,4 +3,5 @@ export interface Etudiant {
     Prenom: string;
     Formation: string;
     Img : string;
+    id : number;
 } 

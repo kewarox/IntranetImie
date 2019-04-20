@@ -5,15 +5,15 @@ import { Routes, RouterModule } from '@angular/router';
 
 import { IonicModule } from '@ionic/angular';
 
-import { ProfilPage } from './profil.page';
+import { TrombinoscopePage } from './trombinoscope.page';
 
 import { SharedModulesModule } from '../shared/shared-modules/shared-modules.module';
-
+import { RechercheProfilComponent } from '../recherche-profil/recherche-profil.component';
 
 const routes: Routes = [
   {
     path: '',
-    component: ProfilPage
+    component: TrombinoscopePage
   }
 ];
 
@@ -26,7 +26,8 @@ const routes: Routes = [
     RouterModule.forChild(routes)
   ],
   declarations: [
-    ProfilPage
+    TrombinoscopePage,
+    RechercheProfilComponent
   ]
 })
-export class ProfilPageModule {}
+export class TrombinoscopePageModule {}

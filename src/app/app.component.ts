@@ -29,9 +29,9 @@ export class AppComponent {
       icone: '../assets/img/Ordinateur.svg'
     },
     {
-      titre: "Profil",
-      commentaire: "Consultez les diffèrentes promotions et parcourez les trombinoscopes pour l'elaboration d'une équipe !",
-      url: '/profil',
+      titre: "trombinoscope",
+      commentaire: "Consultez les diffèrentes formations et parcourez les trombinoscopes pour l'elaboration d'une équipe !",
+      url: '/trombinoscope',
       icone: '../assets/img/Profil_Ico.svg'
     },
     {

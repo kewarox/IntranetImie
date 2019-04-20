@@ -15,7 +15,8 @@ export class HeaderComponent implements OnInit {
   constructor(private DataServiceEtudiant:EtudiantService) { }
 
   ngOnInit() {
-    this.Etudiant = this.DataServiceEtudiant.getEtudiant();
+    //recuperation de la personne utilisant l'application
+    this.Etudiant = this.DataServiceEtudiant.getEtudiant('wacquez')[0];
   }
 
   ionViewWillEnter(){
