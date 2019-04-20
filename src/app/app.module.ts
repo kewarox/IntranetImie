@@ -9,6 +9,8 @@ import { StatusBar } from '@ionic-native/status-bar/ngx';
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
 import { SharedModulesModule } from './shared/shared-modules/shared-modules.module';
+import { HttpModule } from '@angular/http';
+
 
 
 
@@ -20,6 +22,7 @@ import { SharedModulesModule } from './shared/shared-modules/shared-modules.modu
   imports: [
     SharedModulesModule,
     BrowserModule,
+    HttpModule,
     IonicModule.forRoot(),
     AppRoutingModule
   ],
